@@ -2,8 +2,6 @@ package imolcean.study.algorithms;
 
 public class SelectionSort<T extends Comparable<T>> extends AbstractSort<T>
 {
-    public SelectionSort() {}
-
     @Override
     public T[] sort(T[] arr)
     {

@@ -2,8 +2,6 @@ package imolcean.study.algorithms;
 
 public class BubbleSort<T extends Comparable<T>> extends AbstractSort<T>
 {
-    public BubbleSort() {}
-
     @Override
     public T[] sort(T[] arr)
     {
