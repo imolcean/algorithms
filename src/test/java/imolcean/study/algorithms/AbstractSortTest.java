@@ -1,21 +1,20 @@
 package imolcean.study.algorithms;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.util.Arrays;
 
-class SortTest
+abstract class AbstractSortTest
 {
     private Sort<Integer> intSort;
     private Sort<String> strSort;
 
-    @BeforeEach
-    void setUp()
+    protected AbstractSortTest(Sort<Integer> intSort, Sort<String> strSort)
     {
-        this.intSort = new MergeSort<>(Integer.class);
-        this.strSort = new MergeSort<>(String.class);
+        this.intSort = intSort;
+        this.strSort = strSort;
     }
 
     @Test
@@ -69,9 +68,9 @@ class SortTest
     @Test
     void sortStringArray()
     {
-        String[] res = {"", "A", "ZZTop", "ZZZ"};
+        String[] res = {"A", "Bb", "ZZTop", "ZZZ"};
 
-        String[] in = {"ZZTop", "ZZZ", "A", ""};
+        String[] in = {"ZZTop", "ZZZ", "A", "Bb"};
 
         String[] out = this.strSort.sort(in);
 
